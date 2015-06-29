@@ -1,0 +1,109 @@
+/* Map container */
+.map {
+    min-width: 300px;
+    min-height: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Blue headers */
+.header {
+    background-color: #F5F5F5;
+    color: #36A0FF;
+    height: 70px;
+    font-size: 35px;
+    padding: 10px;
+}
+
+/* Big blue icons */
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+/* Team member template */
+.team-member {
+    padding-bottom: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Grey separator */
+hr.post-separator{
+	border-top: 1px solid #8c8b8b;
+}
+
+/* Center image */
+.img-center {
+	margin: 0 auto;
+}
+
+/* Event box */
+.box > .icon {
+    text-align: center;
+    position: relative;
+}
+
+.box > .icon > .image img{
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 7px solid #f9a41d;
+    line-height: 100px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    vertical-align: middle;
+}
+
+.box > .icon:hover > .image img {
+    border: 7px solid black;
+}
+
+.box > .icon > .image > i {
+    font-size: 48px !important;
+    color: #fff !important;
+}
+
+.box > .icon:hover > .image > i {
+    color: white !important;
+}
+
+.box > .icon > .info {
+    margin-top: -30px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid #e0e0e0;
+    padding: 15px 0 10px 0;
+}
+
+    .box > .icon > .info > h3.title {
+        color: #222;
+        font-weight: 500;
+    }
+
+    .box > .icon > .info > p {
+        color: #666;
+        line-height: 1.5em;
+        margin: 20px;
+    }
+
+.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a {
+    color: #222;
+}
+
+.box > .icon > .info > .more a {
+    color: #222;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.box > .icon:hover > .info > .more > a {
+    color: #000;
+    padding: 6px 8px;
+    border-bottom: 4px solid black;
+}

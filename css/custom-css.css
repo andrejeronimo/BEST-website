@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    font-size: 10pt;
+}
+
+body{
+    background-color:#e6e6e6; 
+    width: 100%;
+	text-rendering: optimizeLegibility;
+    font-weight: 400;
+}
+#fundo_1{
+    margin: auto; 
+    position: absolute;
+    width: 100%;
+    margin-top: -145px;
+    margin-left: 0px;
+    height: 110%;
+}
+#logo_BEST{
+    position: relative;
+    margin-left: 10%;
+    margin-top: 6rem;
+    width: 20%;
+    margin-bottom: 3rem;
+}
+
+/*----- Navigation Bar--------------*/
+.drop_menu {
+	padding:0;
+	list-style-type:none;
+	height: 3rem ;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    text-align: center;
+}
+
+.drop_menu li { 
+    display: inline-block;
+    
+}
+.drop_menu li a {
+	padding:0.5rem 1.2rem;
+	display:block;
+	color:white;
+	text-decoration:none;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 1.55rem;
+    align-content: center;
+}
+
+    .drop_menu ul {
+        position:absolute;
+        left:-9999px;
+        top:-9999px;
+        list-style-type:none;
+    }
+    .drop_menu li:hover { 
+        position:relative; 
+        background:#0872b9; 
+        transition-duration: 0.8s;
+    }
+        .drop_menu li:hover ul {
+            left:0px;
+            top:2.4rem;
+            background:#0872b9;
+            padding:0px;yh
+            display: block;
+            position: absolute;
+        }
+
+            .drop_menu li:hover ul li a {
+                padding:5px;
+                display:block;
+                width:168px;
+                text-indent:15px;
+                background-color:#0872b9;
+                transition-duration: 0.8s;
+            }
+            .drop_menu li:hover ul li a:hover { 
+                background:#6ac0d4; }
+
+/*----- Conteúdo ---*/
+
+#conteudo{
+    box-shadow: 0px 0px 1.5rem black;
+    width: 70%;
+    left: 50%;
+    margin-left: -35%;
+    position: absolute;
+    background-color: #e6e6e6;
+    margin-top: 3.5rem;
+    font-size: 1rem;
+    }
+
+
+/* ---- Rodapé -------------*/
+#baixo{
+    position: absolute;
+    margin-top:75rem;
+    width: 100%;
+}
+#fundo_2{
+    position: relative;
+    width: 100%;  
+}
+
+#contactos{
+    position:relative;
+    margin-top: -8%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;    
+}
+#contactos tr td{
+    font-size: 1.2rem;
+    width: auto;
+    padding-left:  10px;
+    padding-right:  10px;
+    text-decoration: none;
+}
+#contactos tr td a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #6d6d6d;
+    font-family: Tahoma, Geneva, sans-serif;
+    align-content: center;
+}
+#contactos tr td img{
+    height: 1.8rem;
+    margin-left: 15px;
+}
+
+
+/*
