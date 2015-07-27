@@ -16,7 +16,7 @@ body{
 #header{
     background-image: url(../images/fundo_cima.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 110%;
     background-color:#e6e6e6;
     position: static;
 }
@@ -24,8 +24,7 @@ body{
 #logo_BEST{
     position: relative;
     margin-left: 10%;
-    margin-top: 2%;
-    margin-bottom: 300px;
+    margin-bottom: 250px;
     width: 25%;
 }
 
