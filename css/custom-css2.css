@@ -184,3 +184,16 @@ h1 {
     border-left:1px solid #000;
     height:500px;
 }
+
+/* Panel title */
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: white;
+}
+
+/* Panel big title */
+.panel-big-title {
+    font-size: 40px;   
+}
