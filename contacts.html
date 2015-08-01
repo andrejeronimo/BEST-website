@@ -17,17 +17,33 @@
         <!-- Custom CSS -->
         <link type="text/css" rel="stylesheet" href="css/custom-css.css" />
         <link type="text/css" rel="stylesheet" href="css/custom-css2.css" />
+        
+        <!-- i18next Javascript -->
+        <script src="http://i18next.com/public/download/latest/i18next.js"></script>
+
+        <!-- FlagStrap Plugin -->
+        <link href="css/flags.css" rel="stylesheet">
+        <script src="js/jquery.flagstrap.js"></script>
+        
+        <!-- Custom Javascript -->
+        <script type="text/javascript" src="js/custom-js.js"></script>
     </head>
     <body>
+
         <div  class="jumbotron" id="header"> <!-- begin header-->
             
             <a href="homepage.html" > <img id="logo_BEST" src="images/logo_BEST_branco.png" onmouseover="this.src='images/logo_BEST.png'" onmouseout="this.src='images/logo_BEST_branco.png'"  id="logo_BEST"/></a>
             
         </div> <!-- end header-->
+
+        <!-- Language dropdown -->
+        <div class="languages-container">
+            <div id="languages-dropdown" data-input-name="language"></div>
+        </div>
+        <!-- ./Language dropdown -->
             
             
-        <div  class="container" id="main">
-            
+        <div  class="container" id="main">            
             
             <div class="row" style="padding: 0px" > <!-- Nav Bar -->
              <div id="custom-bootstrap-menu" class="navbar1" role="navigation" style="margin:0px">
@@ -39,25 +55,24 @@
                        
                         <div class="collapse navbar-collapse navbar-menubuilder" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li ><a href="homepage.html" >HOME</a>
+                                <li><a href="homepage.html" data-i18n="main-menu.home">HOME</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BEST </a>
-                                
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.events">EVENTOS</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTOS </a>
-                                    <ul class="dropdown-menu">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.best">BEST</a>
+                                    <ul class="dropdown-menu custom-dropdown-menu">
                                     <li><a href="ebec.html">EBEC</a></li>
                                   </ul>
                                 </li>
-                                <li><a href="#">PARCEIROS</a>
+                                <li><a href="#" data-i18n="main-menu.partners">PARCEIROS</a>
                                 </li>
-                                <li><a href="#">MEDIA</a>
+                                <li><a href="#" data-i18n="main-menu.media"></a>
                                 </li>
-                                <li><a href="contacts.html">CONTACTOS</a>
+                                <li><a href="contacts.html" data-i18n="main-menu.contacts">CONTACTOS</a>
                                 </li>
-                                <li><a href="#">RECRUTAMENTO</a>
+                                <li><a href="#" data-i18n="main-menu.recruitment">RECRUTAMENTO</a>
                                 </li>
                             </ul>
                         </div>
@@ -68,107 +83,105 @@
             
             <div class="row" style="padding: 20px" id="content">
             
-            <div class="row" style="padding: 20px">
-                
-                <!-- Map Container -->
-                <div class="col-md-6">
-                    <div>
-                        <div class="panel panel-default">
-                            <div class="panel-body text-center">
-                                <div id="map1" class="map">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Map Container -->
-                
-                <!-- Address, phone and email container -->
-                <div class="col-md-6">
-                    <div>
-                        <div class="well well-sm">                            
+                <div class="row" style="padding: 20px">
+
+                    <!-- Map Container -->
+                    <div class="col-md-6">
+                        <div>
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title text-center" style="font-size:30px">Visit us</h3>
-                                </div>                            
-                            </div>  
-                            <div class="panel-body text-center">
-                                <div>
-                                    <strong>Address:</strong><br/>
-                                    Incubadora de Empresas da Universidade de Aveiro<br/>
-                                    Campus Universitário de Santiago, Edifício 1<br/>
-                                    3810-193 Aveiro<br/>
-                                    Portugal<br/><br/>
-
-                                    <strong>Phone:</strong><br/>
-                                    +351 911 540 951 <br/><br/>
-
-                                    <strong>Email:</strong><br/>
-                                    <a href="mailto:name@email.com">aveiro@BEST.eu.org</a><br/>
+                                <div class="panel-body text-center">
+                                    <div id="map1" class="map">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End address, phone and email container -->
-                
-                <!-- Contact form container -->
-                <div class="col-md-12">
-                    <div class="well well-sm">
-                        <form class="form-horizontal" method="post">
-                            <fieldset>
+                    <!-- End Map Container -->
+                    
+                    <!-- Address, phone and email container -->
+                    <div class="col-md-6">
+                        <div>
+                            <div class="well well-sm">                            
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title text-center" style="font-size:30px">Contact us</h3>
+                                        <h3 class="panel-title panel-big-title text-center" data-i18n="contacts.visit-us.title">Visita-nos</h3>
                                     </div>                            
                                 </div>  
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                                    </div>
-                                </div>
+                                <div class="panel-body text-center">
+                                    <div>
+                                        <strong data-i18n="contacts.visit-us.address">Morada:</strong><br/>
+                                        Incubadora de Empresas da Universidade de Aveiro<br/>
+                                        Campus Universitário de Santiago, Edifício 1<br/>
+                                        3810-193 Aveiro<br/>
+                                        Portugal<br/><br/>
 
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                                    </div>
-                                </div>
+                                        <strong data-i18n="contacts.visit-us.phone">Telefone:</strong><br/>
+                                        +351 911 540 951 <br/><br/>
 
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                        <strong>Email:</strong><br/>
+                                        <a href="mailto:name@email.com">aveiro@BEST.eu.org</a><br/>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Enter your message for us here." rows="7"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-default btn-lg">Submit</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- End contact form container -->
-                
-                
-            </div>    
+                    <!-- End address, phone and email container -->
+                    
+                    <!-- Contact form container -->
+                    <div class="col-md-12">
+                        <div class="well well-sm">
+                            <form class="form-horizontal" method="post">
+                                <fieldset>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title panel-big-title text-center" data-i18n="contacts.contact-us.title">Contacta-nos</h3>
+                                        </div>                            
+                                    </div>  
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="fname" name="name" type="text" placeholder="Primeiro Nome" class="form-control" data-i18n="[placeholder]contacts.contact-us.first-name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="lname" name="name" type="text" placeholder="Último Nome" class="form-control" data-i18n="[placeholder]contacts.contact-us.last-name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control" data-i18n="[placeholder]contacts.contact-us.email-address">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <input id="phone" name="phone" type="text" placeholder="Telefone" class="form-control" data-i18n="[placeholder]contacts.contact-us.phone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Escrever a tua mensagem aqui ..." rows="7" data-i18n="[placeholder]contacts.contact-us.message"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg" data-i18n="contacts.contact-us.send-button">Enviar</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End contact form container -->                   
+                </div>    
             </div>
             
         </div>
@@ -185,7 +198,6 @@
                 </table>
             </div>
         </div>
-    
     </body>
 
 </html>

@@ -1,0 +1,34 @@
+{
+  "app": {
+    "name" : "i18next"
+  },
+
+
+  "main-menu": {
+    "home": "HOME",
+    "best": "BEST",
+    "events": "EVENTS",
+    "partners": "PARTNERS",
+    "media": "MEDIA",
+    "contacts": "CONTACTS",
+    "recruitment": "RECRUITMENT"
+  },
+
+  "contacts": {
+    "visit-us": {
+      "title": "Visit us",
+      "address": "Address:",
+      "phone": "Phone:"
+  },
+
+  "contact-us": {
+      "title": "Contact us",
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email-address": "Email Address",
+      "phone": "Phone",
+      "message": "Enter yout message here ...",
+      "send-button": "Send"
+    }
+  } 
+}

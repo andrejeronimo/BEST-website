@@ -197,3 +197,10 @@ h1 {
 .panel-big-title {
     font-size: 40px;   
 }
+
+/* Languages container (top and right corner) */
+.languages-container {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}

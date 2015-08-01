@@ -134,19 +134,19 @@ custom-bootstrap-menu.navbar1 .navbar-toggle:hover .icon-bar,
     text-align: center;
 }
 
-.dropdown-menu{
+.custom-dropdown-menu{
     background-color: #0872b9;
     border-radius: 0px;
     border:none;
     padding: 0px;
 }
 
-.dropdown-menu>li>a{
+.custom-dropdown-menu>li>a{
     color: rgb(255,255,255);
     font-size: 20px;
 }
 
-.dropdown-menu>li>a:hover{
+.custom-dropdown-menu>li>a:hover{
     background-color: #6ac0d4;
     background-image: none;
     color:rgb(255,255,255);
