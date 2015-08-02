@@ -17,18 +17,36 @@
         <!-- Custom CSS -->
         <link type="text/css" rel="stylesheet" href="css/custom-css.css" />
         <link type="text/css" rel="stylesheet" href="css/custom-css2.css" />
+
+        <!-- i18next Javascript -->
+        <script src="http://i18next.com/public/download/latest/i18next.js"></script>
+        
+        <!-- Custom Javascript -->
+        <script type="text/javascript" src="js/custom-js.js"></script>
+
+        <!-- Facebook moderation tool -->
+        <meta property="fb:admins" content="916968148360903"/>
     </head>
     <body>
         
         <!-- Facebook Javascript SDK -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=916968148360903";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '916968148360903',
+              xfbml      : true,
+              version    : 'v2.4'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
         <!-- ./Facebook Javascript SDK -->
         
         <div  class="jumbotron" id="header"> <!-- begin header-->
@@ -36,10 +54,23 @@
             <a href="homepage.html" > <img id="logo_BEST" src="images/logo_BEST_branco.png" onmouseover="this.src='images/logo_BEST.png'" onmouseout="this.src='images/logo_BEST_branco.png'"  id="logo_BEST"/></a>
             
         </div> <!-- end header-->
+
+        <!-- Language dropdown -->
+        <div class="languages-container">
+            <div id="languages-dropdown" data-input-name="language"></div>
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="lang-dropdown">
+                    <img src="images/pt.png"> &nbsp; Portuguese &nbsp; <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="pt-lang"><img src="images/pt.png"> &nbsp; Portuguese &nbsp; </a></li>
+                    <li><a href="#" id="en-lang"><img src="images/gb.png"> &nbsp; English &nbsp; </a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- ./Language dropdown -->              
             
-            
-        <div  class="container" id="main">
-            
+        <div  class="container" id="main">            
             
             <div class="row" style="padding: 0px" > <!-- Nav Bar -->
              <div id="custom-bootstrap-menu" class="navbar1" role="navigation" style="margin:0px">
@@ -51,25 +82,24 @@
                        
                         <div class="collapse navbar-collapse navbar-menubuilder" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li ><a href="homepage.html" >HOME</a>
+                                <li><a href="homepage.html" data-i18n="main-menu.home">HOME</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BEST </a>
-                                
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.events">EVENTOS</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTOS </a>
-                                    <ul class="dropdown-menu">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.best">BEST</a>
+                                    <ul class="dropdown-menu custom-dropdown-menu">
                                     <li><a href="ebec.html">EBEC</a></li>
                                   </ul>
                                 </li>
-                                <li><a href="#">PARCEIROS</a>
+                                <li><a href="#" data-i18n="main-menu.partners">PARCEIROS</a>
                                 </li>
-                                <li><a href="#">MEDIA</a>
+                                <li><a href="#" data-i18n="main-menu.media"></a>
                                 </li>
-                                <li><a href="contacts.html">CONTACTOS</a>
+                                <li><a href="contacts.html" data-i18n="main-menu.contacts">CONTACTOS</a>
                                 </li>
-                                <li><a href="#">RECRUTAMENTO</a>
+                                <li><a href="#" data-i18n="main-menu.recruitment">RECRUTAMENTO</a>
                                 </li>
                             </ul>
                         </div>
@@ -106,64 +136,12 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
 
                     <hr class="post-separator">
-
-                    <!-- Comments Form -->
-                    <div class="well">
-                        <h4>Leave a Comment:</h4>
-                        <form role="form">
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    </div>
-
-                    <hr class="post-separator">
-
-                    <!-- Posted Comments -->
-
-                    <!-- Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="images/jeronimo1.jpg" alt="" style="height:64px; widht:64px">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Jeronimo
-                                <small>August 25, 2014 at 9:30 PM</small>
-                            </h4>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </div>
-
-                    <!-- Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="images/jeronimo1.jpg" alt="" style="height:64px; widht:64px">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Jeronimo
-                                <small>August 25, 2014 at 9:30 PM</small>
-                            </h4>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-                            <!-- Nested Comment -->
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="images/jeronimo1.jpg" alt="" style="height:64px; widht:64px">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Jeronimo
-                                        <small>August 25, 2014 at 9:30 PM</small>
-                                    </h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <!-- Facebook comments plugin -->
-                    <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="10"></div>
-                    <!-- ./Facebook comments plugin -->
+                    <div class="well well-sm">
+                        <!-- Facebook comments plugin -->
+                        <div class="fb-comments" data-href="http://google.com" data-numposts="10"></div>
+                        <!-- ./Facebook comments plugin -->
+                    </div>
                     
                 </div>
             </div>

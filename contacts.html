@@ -20,16 +20,11 @@
         
         <!-- i18next Javascript -->
         <script src="http://i18next.com/public/download/latest/i18next.js"></script>
-
-        <!-- FlagStrap Plugin -->
-        <link href="css/flags.css" rel="stylesheet">
-        <script src="js/jquery.flagstrap.js"></script>
         
         <!-- Custom Javascript -->
         <script type="text/javascript" src="js/custom-js.js"></script>
     </head>
     <body>
-
         <div  class="jumbotron" id="header"> <!-- begin header-->
             
             <a href="homepage.html" > <img id="logo_BEST" src="images/logo_BEST_branco.png" onmouseover="this.src='images/logo_BEST.png'" onmouseout="this.src='images/logo_BEST_branco.png'"  id="logo_BEST"/></a>
@@ -39,9 +34,17 @@
         <!-- Language dropdown -->
         <div class="languages-container">
             <div id="languages-dropdown" data-input-name="language"></div>
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="lang-dropdown">
+                    <img src="images/pt.png"> &nbsp; Portuguese &nbsp; <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="pt-lang"><img src="images/pt.png"> &nbsp; Portuguese &nbsp; </a></li>
+                    <li><a href="#" id="en-lang"><img src="images/gb.png"> &nbsp; English &nbsp; </a></li>
+                </ul>
+            </div>
         </div>
         <!-- ./Language dropdown -->
-            
             
         <div  class="container" id="main">            
             
@@ -78,8 +81,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- end NavBar -->
-                
+            </div> <!-- end NavBar -->                
             
             <div class="row" style="padding: 20px" id="content">
             

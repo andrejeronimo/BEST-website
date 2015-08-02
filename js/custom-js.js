@@ -10,32 +10,40 @@ i18n.init({
     $('[data-i18n]').i18n();
   });
 
-$(document).ready( function() {
+/* On document ready initialize some components */
+$(document).ready( function() {   
 
     /* Initialize languages dropdown */
-    $('#languages-dropdown').flagStrap({
-        countries: {
-            "PT": "Portuguese",
-            "GB": "English",
-        }
-    });
-
-    /* Languages dropdown on change event */
-    $("#languages-dropdown").change( function() {
-        var language = $("#languages-dropdown option:selected").text();
-
-        if(language.toLowerCase() === "portuguese") {
-            i18n.setLng('pt-PT', {fixLng: true}, function(translation){
-                $('[data-i18n]').i18n();
-            });
-        } else if (language.toLowerCase() === "english") {
-            i18n.setLng('en-US', {fixLng: true}, function(translation){
-                $('[data-i18n]').i18n();
-            });
-        }
-    });
-
-    /* Select language in dropdown list */
-
-
+    if (i18n.options.lng.toLowerCase() === 'en-us') {
+        $('#lang-dropdown').html("<img src='images/gb.png'> &nbsp; English &nbsp; <span class='caret'></span>");
+    }
+    setLanguageDropdownEvents();
 });
+
+/* Sets language dropdown events */
+function setLanguageDropdownEvents() {
+
+    // Portuguese
+    $("#pt-lang").on('click', function() {
+
+        // Set language
+        i18n.setLng('pt-PT', {fixLng: true}, function(translation){
+            $('[data-i18n]').i18n();
+        });
+
+        // Update dropdown selected option
+        $('#lang-dropdown').html("<img src='images/pt.png'> &nbsp; Portuguese &nbsp; <span class='caret'></span>");
+    });
+
+    // English
+    $("#en-lang").on('click', function() {
+
+        // Set language
+        i18n.setLng('en-US', {fixLng: true}, function(translation){
+            $('[data-i18n]').i18n();
+        });
+
+        // Update dropdown selected option
+        $('#lang-dropdown').html("<img src='images/gb.png'> &nbsp; English &nbsp; <span class='caret'></span>");
+    });
+}

@@ -14,6 +14,36 @@
     "recruitment": "RECRUTAMENTO"
   },
 
+  "homepage": {
+    "news": {
+      "title": "Notícias"
+    },
+    "events": {
+      "title": "Eventos"
+    }
+  },
+
+  "team": {
+    "board": {
+      "title": "Board",
+      "president": "Presidente",
+      "treasurer": "Tesoureiro",
+      "secretary": "Secretário",
+      "vpis": "Vice-presidente para Assuntos Internos",
+      "vphr": "Vice-presidente para Recursos Humanos"
+    },
+    "coordinators": {
+      "title": "Coordenadores",
+      "fr": "Fundraising",
+      "marketing": "Marketing",
+      "it": "Tecnologias de Informação",
+      "competitions": "Competições"
+    },
+    "members": {
+      "title": "Membros"
+    }
+  },
+
   "contacts": {
     "visit-us": {
         "title": "Visita-nos",

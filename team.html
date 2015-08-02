@@ -17,6 +17,12 @@
         <!-- Custom CSS -->
         <link type="text/css" rel="stylesheet" href="css/custom-css.css" />
         <link type="text/css" rel="stylesheet" href="css/custom-css2.css" />
+
+         <!-- i18next Javascript -->
+        <script src="http://i18next.com/public/download/latest/i18next.js"></script>
+        
+        <!-- Custom Javascript -->
+        <script type="text/javascript" src="js/custom-js.js"></script>
     </head>
     <body>
         <div  class="jumbotron" id="header"> <!-- begin header-->
@@ -24,10 +30,23 @@
             <a href="homepage.html" > <img id="logo_BEST" src="images/logo_BEST_branco.png" onmouseover="this.src='images/logo_BEST.png'" onmouseout="this.src='images/logo_BEST_branco.png'"  id="logo_BEST"/></a>
             
         </div> <!-- end header-->
+
+        <!-- Language dropdown -->
+        <div class="languages-container">
+            <div id="languages-dropdown" data-input-name="language"></div>
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="lang-dropdown">
+                    <img src="images/pt.png"> &nbsp; Portuguese &nbsp; <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="pt-lang"><img src="images/pt.png"> &nbsp; Portuguese &nbsp; </a></li>
+                    <li><a href="#" id="en-lang"><img src="images/gb.png"> &nbsp; English &nbsp; </a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- ./Language dropdown -->            
             
-            
-        <div  class="container" id="main">
-            
+        <div  class="container" id="main">            
             
             <div class="row" style="padding: 0px" > <!-- Nav Bar -->
              <div id="custom-bootstrap-menu" class="navbar1" role="navigation" style="margin:0px">
@@ -39,32 +58,30 @@
                        
                         <div class="collapse navbar-collapse navbar-menubuilder" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li ><a href="homepage.html" >HOME</a>
+                                <li><a href="homepage.html" data-i18n="main-menu.home">HOME</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BEST </a>
-                                
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.events">EVENTOS</a>
                                 </li>
                                 <li class="dropdown">
-                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTOS </a>
-                                    <ul class="dropdown-menu">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="main-menu.best">BEST</a>
+                                    <ul class="dropdown-menu custom-dropdown-menu">
                                     <li><a href="ebec.html">EBEC</a></li>
                                   </ul>
                                 </li>
-                                <li><a href="#">PARCEIROS</a>
+                                <li><a href="#" data-i18n="main-menu.partners">PARCEIROS</a>
                                 </li>
-                                <li><a href="#">MEDIA</a>
+                                <li><a href="#" data-i18n="main-menu.media"></a>
                                 </li>
-                                <li><a href="contacts.html">CONTACTOS</a>
+                                <li><a href="contacts.html" data-i18n="main-menu.contacts">CONTACTOS</a>
                                 </li>
-                                <li><a href="#">RECRUTAMENTO</a>
+                                <li><a href="#" data-i18n="main-menu.recruitment">RECRUTAMENTO</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div> <!-- end NavBar -->
-                
             
             <div class="row" style="padding: 20px" id="content">
                 
@@ -74,38 +91,38 @@
                     <div class="well well-sm">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title panel-big-title">Board</h3>
+                                <h3 class="panel-title panel-big-title" data-i18n="team.board.title">Board</h3>
                             </div>                        
                         </div>
                         <div class="panel-body text-center">
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Eduarda Morais<br/><small data-i18n="team.board.president">Presidente</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Ana Babo<br/><small data-i18n="team.board.treasurer">Tesoureiro</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Luís Barbosa<br/><small data-i18n="team.board.secretary">Secretário</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Catarina Jorge<br/><small data-i18n="team.board.vpis">Vice-presidente para Assuntos Internos</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Carolina Conceição<br/><small data-i18n="team.board.vphr">Vice-presidente para Recursos Humanos</small></h4>
                                 <br>
 				            </div>
                         </div>                        
@@ -116,38 +133,32 @@
                     <div class="well well-sm">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title panel-big-title">Coordinators</h3>
+                                <h3 class="panel-title panel-big-title" data-i18n="team.coordinators.title">Coordinators</h3>
                             </div>                        
                         </div>
                         <div class="panel-body text-center">
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Liliana Duarte<br/><small data-i18n="team.coordinators.fr">Fundraising</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Joana Ferreira<br/><small data-i18n="team.coordinators.marketing">Marketing</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Nuno Marques<br/><small data-i18n="team.coordinators.it">Tecnologias de Informação</small></h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
-                                <br>
-				            </div>
-                            <div class="col-lg-3 centered">
-                                <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
-                                <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Luís Sousa<br/><small data-i18n="team.coordinators.competitions">Competições</small></h4>
                                 <br>
 				            </div>
                         </div>                        
@@ -158,38 +169,38 @@
                     <div class="well well-sm">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title panel-big-title">Members</h3>
+                                <h3 class="panel-title panel-big-title" data-i18n="team.members.title">Membros</h3>
                             </div>                        
                         </div>
                         <div class="panel-body text-center">
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Mike Arney</h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Mike Arney</h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Mike Arney</h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Mike Arney</h4>
                                 <br>
 				            </div>
                             <div class="col-lg-3 centered">
                                 <img class="img img-circle img-team" src="images/jeronimo_with_friends.jpg">
                                 <br>
-                                <h4>Mike Arney<br/><small>My Job</small></h4>
+                                <h4>Mike Arney</h4>
                                 <br>
 				            </div>
                         </div>                        
